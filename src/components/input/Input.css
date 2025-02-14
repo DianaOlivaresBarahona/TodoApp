@@ -1,0 +1,31 @@
+.inputfield {
+  margin-bottom: 15px;
+  width: 100%;
+  padding: 10px;
+  max-width: 350px;
+  margin: 0 auto;
+  position: relative;
+}
+
+input {
+  background: none;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  padding: 10px 0;
+  width: 100%;
+  font-size: 16px;
+  color: #333;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+input:-webkit-autofill {
+  background-color: transparent !important;
+  box-shadow: 0 0 0px 1000px rgb(205, 222, 238) inset !important;
+  color: black !important;
+}
+
+input:focus {
+  border-color: #000000;
+  box-shadow: none;
+}

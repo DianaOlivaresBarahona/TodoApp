@@ -1,0 +1,19 @@
+.add-task-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 20px 145px;
+  font-size: 20px;
+  font-weight: bolder;
+  font-family: sans-serif;
+  background-color: rgb(143, 178, 207);
+  color: #000000;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-task-btn:focus {
+  outline: none;
+}
