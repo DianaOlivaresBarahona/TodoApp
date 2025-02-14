@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
@@ -27,7 +27,9 @@ const App = () => {
 
   // 🔹 Funktion för att ta bort uppgift direkt från listan
   const deleteTodo = (id) => {
-    setList((prevList) => prevList.filter((task) => task.id !== id));
+    const filtered = list.filter((task) => task.id !== id);
+    setList(filtered);
+    localStorage.setItem("todos", JSON.stringify(filtered));
   };
 
   // 🔹 Funktion för att ta bort en slutförd uppgift från completedList
@@ -36,6 +38,13 @@ const App = () => {
       prevCompleted.filter((task) => task.id !== id)
     );
   };
+
+  useEffect(() => {
+    const todos = localStorage.getItem("todos");
+    if (todos) {
+      setList(JSON.parse([todos]));
+    }
+  }, []);
 
   return (
     <Router>
@@ -47,12 +56,7 @@ const App = () => {
           <Route
             path="/todos"
             element={
-              <ToDo
-                list={list}
-                setList={setList}
-                setComplete={setComplete}
-                deleteTodo={deleteTodo}
-              />
+              <ToDo list={list} setList={setList} setComplete={setComplete} />
             }
           />
           <Route path="/addtodo" element={<Addtodo setList={setList} />} />

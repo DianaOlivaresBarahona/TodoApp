@@ -23,6 +23,17 @@ const Todoform = ({ addTodo, setShowForm }) => {
     };
 
     addTodo(newTodo);
+    let todosLocalStorage;
+    if (localStorage.getItem("todos")) {
+      todosLocalStorage = JSON.parse(localStorage.getItem("todos"));
+    }
+
+    localStorage.setItem(
+      "todos",
+      todosLocalStorage
+        ? JSON.stringify([...todosLocalStorage, newTodo])
+        : JSON.stringify([newTodo])
+    );
 
     setTodo("");
     setDate("");

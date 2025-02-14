@@ -15,7 +15,9 @@ const ToDo = ({ list, setList }) => {
   };
 
   const deleteTodo = (id) => {
-    setList((prevList) => prevList.filter((task) => task.id !== id));
+    const filtered = list.filter((task) => task.id !== id);
+    setList(filtered);
+    localStorage.setItem("todos", JSON.stringify(filtered));
   };
 
   const addTodo = (task) => {
