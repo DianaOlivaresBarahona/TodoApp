@@ -6,37 +6,37 @@ const Infopage = () => {
     <div className="infopage-container">
       <h1>PrioritEase</h1>
 
-      <h2>Smidig Uppgiftshantering, Enklare Än Någonsin</h2>
+      <h2>Smooth Task Management, Easier Than Ever</h2>
       <p>
-        Att hålla koll på dina uppgifter ska vara enkelt, inte överväldigande.
-        <strong> PrioritEase</strong> är den smarta att-göra-listan som hjälper
-        dig att planera, prioritera och slutföra dina uppgifter med lätthet.
-        Oavsett om det handlar om jobb, studier eller vardagliga sysslor, ger
-        PrioritEase dig en tydlig översikt och en strukturerad väg mot dina mål.
+        Keeping track of your tasks should be simple, not overwhelming.
+        <strong>PrioritEase</strong> is the smart to-do list that helps you
+        plan, prioritize, and complete your tasks with ease. Whether it's work,
+        studies, or everyday chores, PrioritEase gives you a clear overview and
+        a structured path toward your goals.
       </p>
 
       <ul className="infopage-list">
         <li>
-          <strong>✅ Enkel och intuitiv design</strong> – Lägg till, organisera
-          och bocka av uppgifter med några få tryck.
+          <strong>✅ Simple and intuitive design</strong> – Add, organize, and
+          check off tasks with just a few taps.
         </li>
         <li>
-          <strong>✅ Smart prioritering</strong> – Markera viktiga uppgifter och
-          få en tydlig översikt över vad som behöver göras först.
+          <strong>✅ Smart prioritization</strong> – Highlight important tasks
+          and get a clear view of what needs to be done first.
         </li>
-
         <li>
-          <strong>✅ Flexibla listor</strong> – Skapa personliga listor för
-          arbete, hemmet eller större projekt.
+          <strong>✅ Flexible lists</strong> – Create personal lists for work,
+          home, or bigger projects.
         </li>
       </ul>
+
       <p>
         <strong>
-          Med PrioritEase blir produktivitet en naturlig del av din vardag –
-          utan stress.
+          With PrioritEase, productivity becomes a natural part of your everyday
+          life – without stress.
         </strong>
-        Planera smartare, arbeta effektivare och njut av känslan av att få saker
-        gjorda.
+        Plan smarter, work more efficiently, and enjoy the satisfaction of
+        getting things done.
       </p>
     </div>
   );

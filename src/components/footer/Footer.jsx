@@ -17,7 +17,7 @@ const Footer = ({ showForm, setShowForm }) => {
           >
             <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
           </svg>
-          <span>Alla Göromål</span>
+          <span>All Todos</span>
         </button>
       </Link>
 
@@ -35,7 +35,7 @@ const Footer = ({ showForm, setShowForm }) => {
           >
             <path d="M9 19l-7-7 1.41-1.41L9 16.17l11.59-11.59L22 6l-13 13z" />
           </svg>
-          <span>Slutförda</span>
+          <span>Finished Todos</span>
         </button>
       </Link>
     </footer>
