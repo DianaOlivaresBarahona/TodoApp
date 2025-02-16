@@ -4,7 +4,7 @@ import Todolist from "../todolist/Todolist";
 const AllTodosPage = ({ list, setComplete, deleteTodo }) => {
   return (
     <div>
-      <h1>Alla göromål</h1>
+      <h1>All Tasks</h1>
 
       <Todolist list={list} setComplete={setComplete} deleteTodo={deleteTodo} />
     </div>

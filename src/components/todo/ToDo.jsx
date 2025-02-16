@@ -71,7 +71,7 @@ const ToDo = ({
 
   return (
     <div>
-      {!showForm && <h1 className="List-rubrik">Dagens göromål</h1>}
+      {!showForm && <h1 className="List-rubrik">Todays Tasks</h1>}
 
       {!showForm && (
         <Todolist

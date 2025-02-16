@@ -9,7 +9,7 @@ const localizer = momentLocalizer(moment);
 const Calenderpage = ({ list }) => {
   const activeTasks = list.filter((task) => !task.completed); // Visa ej klarmarkerade uppgifter
 
-  if (activeTasks.length === 0) return <p>Inga uppgifter i kalendern...</p>;
+  if (activeTasks.length === 0) return <p>No tasks in the calendar...</p>;
 
   const events = activeTasks.map((task) => {
     const startDate = new Date(`${task.date}T${task.time || "00:00"}`);
@@ -31,14 +31,21 @@ const Calenderpage = ({ list }) => {
   });
 
   return (
-    <div style={{ height: "700px", padding: "20px " }}>
+    <div
+      style={{
+        height: "500px",
+        padding: "20px ",
+        maxWidth: "800px",
+        margin: "0 auto",
+      }}
+    >
       <h1>Kalender</h1>
       <Calendar
         localizer={localizer}
         events={events}
         startAccessor="start"
         endAccessor="end"
-        style={{ height: 600, backgroundColor: "#f0f0f0", borderRadius: "8px" }}
+        style={{ height: 400, backgroundColor: "#f0f0f0", borderRadius: "8px" }}
       />
     </div>
   );

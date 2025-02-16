@@ -8,7 +8,7 @@ const Footer = ({ showForm, setShowForm }) => {
     <footer>
       {/* Vänstra knappen */}
       <Link to="/alltodos">
-        <button className="all-todos-button">
+        <button className="all-todos-button" onClick={() => setShowForm(false)}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -17,7 +17,7 @@ const Footer = ({ showForm, setShowForm }) => {
           >
             <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
           </svg>
-          <span>All Todos</span>
+          <span>All Tasks</span>
         </button>
       </Link>
 
@@ -26,7 +26,7 @@ const Footer = ({ showForm, setShowForm }) => {
 
       {/* Högra knappen */}
       <Link to="/completed-tasks">
-        <button className="check-button">
+        <button className="check-button" onClick={() => setShowForm(false)}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -35,7 +35,7 @@ const Footer = ({ showForm, setShowForm }) => {
           >
             <path d="M9 19l-7-7 1.41-1.41L9 16.17l11.59-11.59L22 6l-13 13z" />
           </svg>
-          <span>Finished Todos</span>
+          <span>Finished Tasks</span>
         </button>
       </Link>
     </footer>

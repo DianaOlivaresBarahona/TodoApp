@@ -48,7 +48,7 @@ const Todoform = ({ addTodo, setShowForm }) => {
         name="fakeTitle"
         type="text"
         autocomplete="off"
-        placeholder="Titel"
+        placeholder="Title"
         value={todo}
         onChange={(e) => setTodo(e.target.value)}
       />
@@ -68,7 +68,7 @@ const Todoform = ({ addTodo, setShowForm }) => {
         name="fakeDescription"
         type="text"
         autocomplete="off"
-        placeholder="Beskrivning"
+        placeholder="Description"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />

@@ -19,29 +19,6 @@ footer a {
   box-shadow: none;
 }
 
-.floating-btn {
-  width: 65px;
-  height: 65px;
-  border-radius: 50%;
-  font-size: 35px;
-  background-color: #c5eafc;
-  color: #333;
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
-  transition: all 0.3s ease;
-  outline: none;
-}
-
-.floating-btn:hover {
-  color: white;
-  background-color: #a2b9fc;
-  box-shadow: none;
-}
-
 .check-button,
 .all-todos-button {
   display: flex;
