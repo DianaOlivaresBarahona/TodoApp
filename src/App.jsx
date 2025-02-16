@@ -12,8 +12,9 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import { v4 as uuidv4 } from "uuid";
 
 const App = () => {
-  const [list, setList] = useState([]); // Aktiva uppgifter
-  const [completedList, setCompletedList] = useState([]); // Slutförda uppgifter
+  const [list, setList] = useState([]);
+  const [completedList, setCompletedList] = useState([]);
+  const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
     const todos = JSON.parse(localStorage.getItem("todos")) || [];
@@ -22,8 +23,6 @@ const App = () => {
     const completedTodos =
       JSON.parse(localStorage.getItem("completedTodos")) || [];
     setCompletedList(completedTodos);
-
-    console.log("🔄 Data laddad från localStorage:", { todos, completedTodos }); // 🛠️ Kolla vad som laddas
   }, []);
 
   // 🔹 Funktion för att markera uppgift som klar
@@ -79,7 +78,7 @@ const App = () => {
       <Header />
       <div className="main-content">
         <Routes>
-          <Route path="/info" element={<Infopage />} />
+          <Route path="/info" element={<Infopage showForm={showForm} />} />
           <Route path="/calendar" element={<Calenderpage list={list} />} />
           <Route
             path="/todos"
@@ -90,6 +89,8 @@ const App = () => {
                 setComplete={setComplete}
                 completedList={completedList}
                 setCompletedList={setCompletedList}
+                showForm={showForm}
+                setShowForm={setShowForm}
               />
             }
           />
@@ -115,7 +116,7 @@ const App = () => {
           />
         </Routes>
       </div>
-      <Footer />
+      <Footer showForm={showForm} setShowForm={setShowForm} />
     </Router>
   );
 };

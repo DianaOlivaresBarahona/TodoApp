@@ -1,23 +1,44 @@
 footer {
-  margin-top: auto;
+  display: flex;
+  justify-content: space-around; /* Sprider ut knapparna jämnt */
+  align-items: center;
   background-color: #c5eafc;
   width: 100%;
   height: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-top-left-radius: 18px;
   border-top-right-radius: 18px;
   box-shadow: 0 14px 5px rgba(61, 169, 241, 0.1);
   box-sizing: border-box;
   overflow: hidden;
 }
-
 footer a {
   font-family: "Atma", serif;
 
   text-decoration: none;
   outline: none;
+  box-shadow: none;
+}
+
+.floating-btn {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  font-size: 35px;
+  background-color: #c5eafc;
+  color: #333;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.floating-btn:hover {
+  color: white;
+  background-color: #a2b9fc;
   box-shadow: none;
 }
 
