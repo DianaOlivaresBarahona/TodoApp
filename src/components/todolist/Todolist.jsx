@@ -6,7 +6,7 @@ const Todolist = ({ list, setComplete, deleteTodo }) => {
   return (
     <ul className="todo-list">
       {list.length === 0 ? (
-        <li>Inga uppgifter för idag</li>
+        <li className="no-todo-text">Inga uppgifter för idag</li>
       ) : (
         list.map((item) => (
           <Todoitem

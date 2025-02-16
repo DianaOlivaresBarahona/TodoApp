@@ -5,10 +5,7 @@ import "./Todoitem.css";
 
 const Todoitem = ({ item, setComplete, deleteTodo }) => {
   return (
-    <li
-      className="todo-item"
-      style={{ textDecoration: item.completed ? "line-through" : "none" }}
-    >
+    <li className="todo-item">
       <div className="todo-header">
         <span className="todo-time">{item.time}</span>
         <span className="todo-title">{item.todo}</span>

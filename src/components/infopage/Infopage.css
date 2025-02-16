@@ -1,3 +1,9 @@
+.emilys-candy-regular {
+  font-family: "Emilys Candy", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .infopage-container {
   display: flex;
   flex-direction: column;
@@ -5,7 +11,15 @@
   padding: 20px;
 }
 
+.infopage-container h1 {
+  font-family: "Emilys Candy", serif;
+}
+
 .infopage-list {
   list-style-type: none;
   padding: 0;
+}
+
+.infopage-list li {
+  font-family: "Atma", serif;
 }

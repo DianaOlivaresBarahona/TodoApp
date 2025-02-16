@@ -45,8 +45,9 @@ const Todoform = ({ addTodo, setShowForm }) => {
   return (
     <form onSubmit={handleSubmit}>
       <Input
-        name="todo"
+        name="fakeTitle"
         type="text"
+        autocomplete="off"
         placeholder="Titel"
         value={todo}
         onChange={(e) => setTodo(e.target.value)}
@@ -64,8 +65,9 @@ const Todoform = ({ addTodo, setShowForm }) => {
         onChange={(e) => setDate(e.target.value)}
       />
       <Input
-        name="description"
+        name="fakeDescription"
         type="text"
+        autocomplete="off"
         placeholder="Beskrivning"
         value={description}
         onChange={(e) => setDescription(e.target.value)}

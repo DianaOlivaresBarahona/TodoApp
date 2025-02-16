@@ -1,11 +1,14 @@
 import React from "react";
+import "./CompletedTaskPage.css";
 
 const CompletedTasksPage = ({ completedList, deleteCompletedTodo }) => {
   return (
     <div>
       <h1>Slutförda uppgifter</h1>
       {completedList.length === 0 ? (
-        <p>Inga slutförda uppgifter ännu.</p>
+        <div className="no-todo-card">
+          <p>Inga slutförda uppgifter ännu.</p>{" "}
+        </div>
       ) : (
         <ul>
           {completedList.map((task) => (

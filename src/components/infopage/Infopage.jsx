@@ -4,7 +4,9 @@ import "./Infopage.css";
 const Infopage = () => {
   return (
     <div className="infopage-container">
-      <h1>PrioritEase – Smidig Uppgiftshantering, Enklare Än Någonsin</h1>
+      <h1>PrioritEase</h1>
+
+      <h2>Smidig Uppgiftshantering, Enklare Än Någonsin</h2>
       <p>
         Att hålla koll på dina uppgifter ska vara enkelt, inte överväldigande.
         <strong> PrioritEase</strong> är den smarta att-göra-listan som hjälper
@@ -12,7 +14,7 @@ const Infopage = () => {
         Oavsett om det handlar om jobb, studier eller vardagliga sysslor, ger
         PrioritEase dig en tydlig översikt och en strukturerad väg mot dina mål.
       </p>
-      <h2>Varför PrioritEase?</h2>
+
       <ul className="infopage-list">
         <li>
           <strong>✅ Enkel och intuitiv design</strong> – Lägg till, organisera

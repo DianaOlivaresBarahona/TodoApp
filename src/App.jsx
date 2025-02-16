@@ -9,10 +9,22 @@ import Calenderpage from "./components/calenderpage/Calenderpage";
 import AllTodosPage from "./components/alltodospage/AllTodosPage";
 import Completedtaskspage from "./components/completedtaskspage/Completedtaskspage";
 import "react-big-calendar/lib/css/react-big-calendar.css";
+import { v4 as uuidv4 } from "uuid";
 
 const App = () => {
   const [list, setList] = useState([]); // Aktiva uppgifter
   const [completedList, setCompletedList] = useState([]); // Slutförda uppgifter
+
+  useEffect(() => {
+    const todos = JSON.parse(localStorage.getItem("todos")) || [];
+    setList(todos);
+
+    const completedTodos =
+      JSON.parse(localStorage.getItem("completedTodos")) || [];
+    setCompletedList(completedTodos);
+
+    console.log("🔄 Data laddad från localStorage:", { todos, completedTodos }); // 🛠️ Kolla vad som laddas
+  }, []);
 
   // 🔹 Funktion för att markera uppgift som klar
   const setComplete = (id) => {
@@ -20,31 +32,47 @@ const App = () => {
       const taskToComplete = prevList.find((task) => task.id === id);
       if (!taskToComplete) return prevList;
 
-      setCompletedList((prevCompleted) => [...prevCompleted, taskToComplete]); // Flytta till completedList
-      return prevList.filter((task) => task.id !== id); // Ta bort från aktiva uppgifter
+      // Ta bort uppgiften från listan
+      const updatedList = prevList.filter((task) => task.id !== id);
+      localStorage.setItem("todos", JSON.stringify(updatedList));
+
+      // Lägg till uppgiften i completedList
+      setCompletedList((prevCompletedList) => {
+        const newTask = {
+          ...taskToComplete,
+          completed: true,
+          id: uuidv4(), // Skapa ett nytt unikt ID med uuid
+        };
+
+        const updatedCompletedList = [...prevCompletedList, newTask];
+        localStorage.setItem(
+          "completedTodos",
+          JSON.stringify(updatedCompletedList)
+        );
+        return updatedCompletedList;
+      });
+
+      return updatedList;
     });
   };
 
   // 🔹 Funktion för att ta bort uppgift direkt från listan
   const deleteTodo = (id) => {
-    const filtered = list.filter((task) => task.id !== id);
-    setList(filtered);
-    localStorage.setItem("todos", JSON.stringify(filtered));
+    setList((prevList) => {
+      const updatedList = prevList.filter((task) => task.id !== id);
+      localStorage.setItem("todos", JSON.stringify(updatedList)); // ✅ Uppdatera localStorage
+      return updatedList;
+    });
   };
 
   // 🔹 Funktion för att ta bort en slutförd uppgift från completedList
   const deleteCompletedTodo = (id) => {
-    setCompletedList((prevCompleted) =>
-      prevCompleted.filter((task) => task.id !== id)
-    );
+    setCompletedList((prevCompleted) => {
+      const updatedCompleted = prevCompleted.filter((task) => task.id !== id);
+      localStorage.setItem("completedTodos", JSON.stringify(updatedCompleted)); // ✅ Uppdatera localStorage
+      return updatedCompleted;
+    });
   };
-
-  useEffect(() => {
-    const todos = localStorage.getItem("todos");
-    if (todos) {
-      setList(JSON.parse([todos]));
-    }
-  }, []);
 
   return (
     <Router>
@@ -56,7 +84,13 @@ const App = () => {
           <Route
             path="/todos"
             element={
-              <ToDo list={list} setList={setList} setComplete={setComplete} />
+              <ToDo
+                list={list}
+                setList={setList}
+                setComplete={setComplete}
+                completedList={completedList}
+                setCompletedList={setCompletedList}
+              />
             }
           />
           <Route path="/addtodo" element={<Addtodo setList={setList} />} />
