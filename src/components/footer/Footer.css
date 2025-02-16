@@ -1,6 +1,6 @@
 footer {
   display: flex;
-  justify-content: space-around; /* Sprider ut knapparna jämnt */
+  justify-content: space-around;
   align-items: center;
   background-color: #c5eafc;
   width: 100%;

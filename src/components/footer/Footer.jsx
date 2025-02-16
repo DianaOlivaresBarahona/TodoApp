@@ -1,12 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import FloatingButton from "../floatingbutton/FloatingButton"; // ✅ Importera FloatingButton
+import FloatingButton from "../floatingbutton/FloatingButton";
 import "./Footer.css";
 
 const Footer = ({ showForm, setShowForm }) => {
   return (
     <footer>
-      {/* Vänstra knappen */}
       <Link to="/alltodos">
         <button className="all-todos-button" onClick={() => setShowForm(false)}>
           <svg
@@ -21,10 +20,8 @@ const Footer = ({ showForm, setShowForm }) => {
         </button>
       </Link>
 
-      {/* Mittknappen (FloatingButton) */}
       <FloatingButton showForm={showForm} setShowForm={setShowForm} />
 
-      {/* Högra knappen */}
       <Link to="/completed-tasks">
         <button className="check-button" onClick={() => setShowForm(false)}>
           <svg

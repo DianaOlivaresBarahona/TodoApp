@@ -2,10 +2,10 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  width: 65px; /* Minskad från 65px */
-  height: 65px; /* Minskad från 65px */
+  width: 65px;
+  height: 65px;
   border-radius: 50%;
-  font-size: 25px; /* Minskad från 35px */
+  font-size: 35px;
   background-color: #c5eafc;
   color: #333;
   border: none;
@@ -13,7 +13,7 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  box-shadow: 3px 3px 8px #bebebe, -3px -3px 8px #ffffff; /* Mindre skuggor */
+  box-shadow: 3px 3px 8px #bebebe, -3px -3px 8px #ffffff;
   transition: all 0.3s ease;
   z-index: 10000;
   outline: none;

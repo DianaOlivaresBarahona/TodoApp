@@ -24,8 +24,8 @@
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
-  flex-direction: row; /* Layout i rad */
-  justify-content: space-between; /* Sprider ut text och knapp */
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   max-width: 400px;
   margin: 10px auto;
@@ -35,13 +35,13 @@
 }
 
 .task-text {
-  flex-grow: 1; /* Tar upp all ledig plats mellan vänster och höger */
-  text-align: center; /* Säkerställer att texten är centrerad */
+  flex-grow: 1;
+  text-align: center;
 }
 
 .button-container {
   display: flex;
-  justify-content: flex-end; /* Säkerställer att knappen ligger till höger */
+  justify-content: flex-end;
 }
 
 .delete-button {
@@ -56,7 +56,7 @@
 }
 
 .delete-icon {
-  font-size: 30px; /* Gör krysset större */
+  font-size: 30px;
 }
 
 .delete-button:hover {

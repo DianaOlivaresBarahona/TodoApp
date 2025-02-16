@@ -7,7 +7,7 @@ import "./Calenderpage.css";
 const localizer = momentLocalizer(moment);
 
 const Calenderpage = ({ list }) => {
-  const activeTasks = list.filter((task) => !task.completed); // Visa ej klarmarkerade uppgifter
+  const activeTasks = list.filter((task) => !task.completed);
 
   if (activeTasks.length === 0) return <p>No tasks in the calendar...</p>;
 

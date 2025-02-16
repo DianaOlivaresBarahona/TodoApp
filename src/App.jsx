@@ -25,22 +25,19 @@ const App = () => {
     setCompletedList(completedTodos);
   }, []);
 
-  // 🔹 Funktion för att markera uppgift som klar
   const setComplete = (id) => {
     setList((prevList) => {
       const taskToComplete = prevList.find((task) => task.id === id);
       if (!taskToComplete) return prevList;
 
-      // Ta bort uppgiften från listan
       const updatedList = prevList.filter((task) => task.id !== id);
       localStorage.setItem("todos", JSON.stringify(updatedList));
 
-      // Lägg till uppgiften i completedList
       setCompletedList((prevCompletedList) => {
         const newTask = {
           ...taskToComplete,
           completed: true,
-          id: uuidv4(), // Skapa ett nytt unikt ID med uuid
+          id: uuidv4(),
         };
 
         const updatedCompletedList = [...prevCompletedList, newTask];
@@ -55,20 +52,18 @@ const App = () => {
     });
   };
 
-  // 🔹 Funktion för att ta bort uppgift direkt från listan
   const deleteTodo = (id) => {
     setList((prevList) => {
       const updatedList = prevList.filter((task) => task.id !== id);
-      localStorage.setItem("todos", JSON.stringify(updatedList)); // ✅ Uppdatera localStorage
+      localStorage.setItem("todos", JSON.stringify(updatedList));
       return updatedList;
     });
   };
 
-  // 🔹 Funktion för att ta bort en slutförd uppgift från completedList
   const deleteCompletedTodo = (id) => {
     setCompletedList((prevCompleted) => {
       const updatedCompleted = prevCompleted.filter((task) => task.id !== id);
-      localStorage.setItem("completedTodos", JSON.stringify(updatedCompleted)); // ✅ Uppdatera localStorage
+      localStorage.setItem("completedTodos", JSON.stringify(updatedCompleted));
       return updatedCompleted;
     });
   };
