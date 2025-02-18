@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import Todolist from "../todolist/Todolist";
 import Todoform from "../todoform/Todoform";
 
-import "./ToDo.css";
-
 const ToDo = ({
   list,
   setList,
